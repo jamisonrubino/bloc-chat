@@ -8,9 +8,9 @@
 		$stateProvider
          .state('landing', {
             url: '/',
-			   controller: 'LandingCtrl as landing',
+			controller: 'LandingCtrl as landing',
             templateUrl: '/templates/landing.html'
-       	})
+       	});
 /*         .state('album', {
             url: '/album',
 				controller: 'AlbumCtrl as album',
@@ -24,6 +24,6 @@
 */
    }
    angular
-      .module('blocChat', ['ui.router'])
-     	.config(config);
+	   .module('blocChat', ['ui.router', 'firebase'])
+	   .config(config);
 })();
