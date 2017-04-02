@@ -1,7 +1,8 @@
 (function() {
-	function LandingCtrl(Room) {
-		this.rooms = Room;
+	function LandingCtrl($scope, Room) {
 		console.log("LandingCtrl working...?");
+		this.rooms = Room;
+		console.log(this.rooms.all);
 	}
  
    angular
