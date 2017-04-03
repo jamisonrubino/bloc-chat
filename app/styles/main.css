@@ -9,9 +9,9 @@ body {
 }
 
 #sidebar {
-	background: #dfdfdf;
+	background: #dfdfef;
 	float: left;
-	width: 275px;
+	width: 250px;
 	padding: 10px;
 	min-height: 100%;
 }
@@ -21,4 +21,20 @@ body {
 	text-indent: 15px;
 	font-family: Arial, sans-serif;
 	color: #484848;
+}
+
+.rooms {
+	margin: 0 30px 5px;
+}
+
+.rooms > a {
+	font-size: 1.1em;
+	font-family: Arial, sans-serif;
+	color: #888;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.rooms > a:hover {
+	color: #666;
 }
