@@ -1,11 +1,10 @@
 (function() {
-	function LandingCtrl($scope, Room) {
-		console.log("LandingCtrl working...?");
-		this.rooms = Room;
-		console.log(this.rooms.all);
+	function LandingCtrl(Room) {
+		this.rooms = Room.rooms;
+		console.log(this.rooms);
 	}
  
-   angular
+	angular
 	   .module('blocChat')
 	   .controller('LandingCtrl', ['Room', LandingCtrl]);
  })();
