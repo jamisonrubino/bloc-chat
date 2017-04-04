@@ -11,16 +11,22 @@ body {
 #sidebar {
 	background: #dfdfef;
 	float: left;
-	width: 250px;
+	width: 280px;
 	padding: 10px;
 	min-height: 100%;
 }
 
 #sidebar h1 {
-	font-size: 1.4em;
+	display: inline-block;
+	float: left;
+	font-size: 1.6em;
 	text-indent: 15px;
 	font-family: Arial, sans-serif;
-	color: #484848;
+	color: #555;
+}
+
+#rooms-wrap {
+	margin-bottom: 20px;
 }
 
 .rooms {
@@ -37,4 +43,26 @@ body {
 
 .rooms > a:hover {
 	color: #666;
+}
+
+#add-room {
+	margin: 25px 0 0 19px;
+	display: inline-block;
+	float: left;
+}
+
+#add-room > a {
+	padding: 10px 24px;
+	font-size: 0.8em;
+	font-family: Arial, sans-serif;
+	color: #888;
+	text-decoration: none;
+	font-weight: bold;
+	background: #efefff;
+
+}
+
+.clear {
+	display: block;
+	clear: both;
 }
