@@ -1,9 +1,10 @@
 (function() {
 	function LandingCtrl(Room) {
-		this.rooms = Room.all;
-		this.newRoom = function (roomName) {
-			
-		}
+		this.rooms = Room.rooms;
+		
+		// Temporary code / replaced by modal
+//		var myRoom = "room5";
+//		Room.newRoom(myRoom);
 	}
  
 	angular
