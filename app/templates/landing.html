@@ -4,7 +4,15 @@
 	<span class="clear"></span>
 	<div id="rooms-wrap">
 		<div ng-repeat="room in landing.Room.rooms" class="rooms">
-			<a href="#" ui-sref="{{'room' + (landing.Room.rooms.indexOf(room) + 1)}}">{{ room.$value.slice(0,1).toUpperCase() + room.$value.slice(1,room.$value.length-1) + " " + room.$value.slice(room.$value.length-1, room.$value.length) }}</a>
+			<a href="#" ui-sref="{{'room' + (landing.Room.rooms.indexOf(room) + 1)}}">
+				{{ room.value }}
+				
+<!--
+				{{ angular.isNumber(room.$value.slice(room.$value.length-1, room.$value.length) == true ? " " + 
+ room.$value.slice(room.$value.length-1, room.$value.length) : room.$value.slice(room.$value.length-1, room.$value.length) }}
+-->
+			
+			</a>
 		</div>
 	</div>
 </section>

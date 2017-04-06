@@ -2,6 +2,7 @@
 	function LandingCtrl(Room) {
 		this.Room = Room;
 		
+		// MODAL CODE
 		this.modalValue = null;
 		this.openModal = function () {
 			NewRoom.modalInstance = $uibModal.open({
