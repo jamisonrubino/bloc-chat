@@ -1,4 +1,174 @@
 (function() {
+	function NewRoomModalCtrl(Room) {
+		
+		this.openModal = function () {
+			this.modalInstance = $uibModal.open({
+				size: sm,
+				animation: true,
+				ariaLabelledBy: 'modal-title',
+				ariaDescribedBy: 'modal-body',
+				templateUrl: 'newroommodal.html'
+			});
+		};
+		
+		this.close = function () {
+			this.modalInstance.dismiss();
+		};
+
+		this.submit = function(value){
+			if (value.length > 0) {
+				Room.newRoom(value);
+			}
+			console.log("");
+		};
+	}
+	
+	angular
+	   .module('blocChat')
+	   .controller('NewRoomModalCtrl', ['Room', NewRoomModalCtrl]);
+})();
+
+//
+//$ctrl = this;
+//
+//$ctrl.open = function (parentSelector) {
+//    var parentElem = parentSelector ? 
+//      angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+//    var modalInstance = $uibModal.open({
+//      animation: true,
+//      ariaLabelledBy: 'modal-title',
+//      ariaDescribedBy: 'modal-body',
+//      templateUrl: 'myModalContent.html',
+//      controller: 'ModalInstanceCtrl',
+//      controllerAs: '$ctrl',
+//      size: sm,
+//      appendTo: parentElem,
+//      resolve: {
+//        items: function () {
+//          return $ctrl.items;
+//        }
+//      }
+//    });
+//
+//    modalInstance.result.then(function (selectedItem) {
+//      $ctrl.selected = selectedItem;
+//    }, function () {
+//      $log.info('Modal dismissed at: ' + new Date());
+//    });
+//  };
+//
+//  $ctrl.openComponentModal = function () {
+//    var modalInstance = $uibModal.open({
+//      animation: $ctrl.animationsEnabled,
+//      component: 'modalComponent',
+//      resolve: {
+//        items: function () {
+//          return $ctrl.items;
+//        }
+//      }
+//    });
+//
+//    modalInstance.result.then(function (selectedItem) {
+//      $ctrl.selected = selectedItem;
+//    }, function () {
+//      $log.info('modal-component dismissed at: ' + new Date());
+//    });
+//  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*angular.module('blocChat').controller('ModalCtrl', function (ModalInstanceCtrl, $uibModal, $log, $document) {
+  var $ctrl = this;
+  $ctrl.items = ['item1', 'item2', 'item3'];
+
+  $ctrl.animationsEnabled = true;
+
+  $ctrl.open = function (size, parentSelector) {
+    var parentElem = parentSelector ? 
+      angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+    var modalInstance = $uibModal.open({
+      animation: $ctrl.animationsEnabled,
+      ariaLabelledBy: 'modal-title',
+      ariaDescribedBy: 'modal-body',
+      templateUrl: 'myModalContent.html',
+      controller: 'ModalInstanceCtrl',
+      controllerAs: '$ctrl',
+      size: size,
+      appendTo: parentElem,
+      resolve: {
+        items: function () {
+          return $ctrl.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $ctrl.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $ctrl.toggleAnimation = function () {
+    $ctrl.animationsEnabled = !$ctrl.animationsEnabled;
+  };
+});
+
+
+// Please note that the close and dismiss bindings are from $uibModalInstance.
+
+angular.module('blocChat').component('modalComponent', {
+  templateUrl: 'myModalContent.html',
+  bindings: {
+    resolve: '<',
+    close: '&',
+    dismiss: '&'
+  },
+  controller: function () {
+    var $ctrl = this;
+
+    $ctrl.$onInit = function () {
+      $ctrl.items = $ctrl.resolve.items;
+      $ctrl.selected = {
+        item: $ctrl.items[0]
+      };
+    };
+
+    $ctrl.ok = function () {
+      $ctrl.close({$value: $ctrl.selected.item});
+    };
+
+    $ctrl.cancel = function () {
+      $ctrl.dismiss({$value: 'cancel'});
+    };
+  }
+});*/
+
+
+
+
+
+
+
+
+
+
+
+/*(function() {
 	function ModalCtrl(Room, $uibModal, $log, $document) {
 		$ctrl = this;
 		$ctrl.input = null;
@@ -31,6 +201,7 @@
 		};
 
 		$ctrl.ok = function () {
+			console.log($("#new-room-name").value);
 			if($("#new-room-name").value.length > 0) {
 				$ctrl.input = $("#new-room-name").value;
 			}
@@ -66,6 +237,15 @@
 		.module('blocChat')
 		.controller('ModalCtrl', ModalCtrl);
 })();
+*/
+
+
+
+
+
+
+
+
 
 
 /*
