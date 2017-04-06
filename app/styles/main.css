@@ -26,11 +26,11 @@ body {
 }
 
 #rooms-wrap {
-	margin-bottom: 20px;
+	margin: 15px 15px;
 }
 
 .rooms {
-	margin: 0 30px 5px;
+	margin: 0 0 5px;
 }
 
 .rooms > a {
@@ -43,6 +43,7 @@ body {
 
 .rooms > a:hover {
 	color: #666;
+	text-decoration: none;
 }
 
 #add-room {
