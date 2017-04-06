@@ -1,6 +1,8 @@
 (function() {
 	function LandingCtrl(Room) {
-		this.rooms = Room.rooms;
+		this.Room = Room;
+		
+		this.modalValue = null;
 		this.openModal = function () {
 			NewRoom.modalInstance = $uibModal.open({
 				size: sm,
@@ -13,12 +15,12 @@
 		this.close = function () {
 			this.modalInstance.dismiss();
 		};
-
 		this.submit = function(value){
-			if (value.length > 0) {
-				Room.newRoom(value);
-			}
-			console.log("Do Something");
+			this.modalValue = $("#modal-value").val();
+			console.log(this.modalValue);
+			if (this.modalValue.length > 0) {
+				Room.newRoom(this.modalValue);
+			}		
 		};
 
 // Temporary code / replaced by modal

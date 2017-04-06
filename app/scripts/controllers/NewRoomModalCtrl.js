@@ -1,26 +1,6 @@
 (function() {
 	function NewRoomModalCtrl(Room) {
-		
-		this.openModal = function () {
-			this.modalInstance = $uibModal.open({
-				size: sm,
-				animation: true,
-				ariaLabelledBy: 'modal-title',
-				ariaDescribedBy: 'modal-body',
-				templateUrl: 'newroommodal.html'
-			});
-		};
-		
-		this.close = function () {
-			this.modalInstance.dismiss();
-		};
 
-		this.submit = function(value){
-			if (value.length > 0) {
-				Room.newRoom(value);
-			}
-			console.log("");
-		};
 	}
 	
 	angular
