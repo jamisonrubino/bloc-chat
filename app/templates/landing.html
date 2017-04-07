@@ -13,10 +13,12 @@
 <section id="room">
 	<h2 style="margin: 0">{{ landing.selectedRoom }}</h2>
 	<div id="messages-wrap">
-		<div ng-repeat="message in landing.Message.messageArr" class="messages">
-			{{ message.username }}
-			{{ message.sentAt }}
-			{{ message.content }}
+		<div class="message">
+			<div ng-repeat="message in landing.Message.messageArr" class="messages">
+				<div class="username">{{ message.username }}</div>
+				<div class="sent-at">{{ message.sentAt }}</div>
+				<div class="content">{{ message.content }}</div>
+			</div>
 		</div>
 	</div>
 </section>

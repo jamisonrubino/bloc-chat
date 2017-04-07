@@ -71,6 +71,7 @@ body {
 	clear: both;
 }
 
+
 #room {
 	display: inline-block;
 	float: left;
@@ -80,11 +81,15 @@ body {
 
 #room > h2 {
 	margin-top: 0;
-	display: inline-block;
-	float: left;
+	display: block;
 	font-size: 1.4em;
 /*	text-indent: 15px;*/
 	font-family: Arial, sans-serif;
 	color: #555;
 	font-weight: bold;
+}
+
+.username, .sent-at, .content {
+	display: block;
+	float: clear;
 }
