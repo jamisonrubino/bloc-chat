@@ -4,15 +4,19 @@
 	<span class="clear"></span>
 	<div id="rooms-wrap">
 		<div ng-repeat="room in landing.Room.rooms" class="rooms">
-			<a href="#" ui-sref="{{'room' + (landing.Room.rooms.indexOf(room) + 1)}}">
+			<a href="" ng-click="landing.Message.getByRoomId(room.value); landing.selectedRoom = room.value">
 				{{ room.value }}
-				
-<!--
-				{{ angular.isNumber(room.$value.slice(room.$value.length-1, room.$value.length) == true ? " " + 
- room.$value.slice(room.$value.length-1, room.$value.length) : room.$value.slice(room.$value.length-1, room.$value.length) }}
--->
-			
 			</a>
+		</div>
+	</div>
+</section>
+<section id="room">
+	<h2 style="margin: 0">{{ landing.selectedRoom }}</h2>
+	<div id="messages-wrap">
+		<div ng-repeat="message in landing.Message.messageArr" class="messages">
+			{{ message.username }}
+			{{ message.sentAt }}
+			{{ message.content }}
 		</div>
 	</div>
 </section>

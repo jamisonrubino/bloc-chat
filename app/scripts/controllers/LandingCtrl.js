@@ -1,13 +1,10 @@
 (function() {
-	function LandingCtrl(Room) {
+	function LandingCtrl(Room, Message) {
 		this.Room = Room;
-
-// Temporary code / replaced by modal
-//		var myRoom = "room5";
-//		Room.newRoom(myRoom);
+		this.Message = Message;
 	}
  
 	angular
 	   .module('blocChat')
-	   .controller('LandingCtrl', ['Room', LandingCtrl]);
+	   .controller('LandingCtrl', ['Room', 'Message', LandingCtrl]);
  })();
