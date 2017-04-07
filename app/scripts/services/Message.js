@@ -3,10 +3,10 @@
 		var Message = {};
 		var ref = firebase.database().ref().child("messages");
 		var messages = $firebaseArray(ref);
-		Message.messageArr = [];
 
       	Message.getByRoomId = function (roomId) {
 			ref.orderByChild('roomId').equalTo(roomId).on('value', function(snapshot) {
+				Message.messageArr = [];
 				for (var i=1; i<=messages.length; i++) {
 					Message.messageArr.push({ 
 						username: snapshot.child(i).child("username").val(),

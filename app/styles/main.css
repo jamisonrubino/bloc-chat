@@ -1,11 +1,7 @@
-html {
+html, body {
 	margin: 0;
 	padding: 0;
-}
-
-body {
-	margin: 0;
-	padding: 0;
+	height: 100%;
 }
 
 #sidebar {
@@ -14,8 +10,10 @@ body {
 	background: #dfdfef;
 	float: left;
 	width: 280px;
+	max-width: 280px;
 	padding: 10px;
 	min-height: 100%;
+	overflow: visible;
 }
 
 #sidebar h1 {
@@ -50,12 +48,12 @@ body {
 }
 
 #add-room {
-	margin: 20px 0 0 19px;
+	margin: 19px 0 0 19px;
 	display: inline-block;
 	float: left;
 }
 
-#add-room > a {
+#add-room a {
 	padding: 10px 24px;
 	font-size: 0.8em;
 	font-family: Arial, sans-serif;
@@ -63,7 +61,6 @@ body {
 	text-decoration: none;
 	font-weight: bold;
 	background: #efefff;
-
 }
 
 .clear {
@@ -72,24 +69,67 @@ body {
 }
 
 
+
+
+
+
+
+
 #room {
 	display: inline-block;
 	float: left;
 	margin-top: 0;
-	padding: 20px;1
+	padding: 20px 0;
+	max-width: calc(100% - 280px);
 }
 
-#room > h2 {
-	margin-top: 0;
+#room h2 {
+	margin: 0 20px 20px;
 	display: block;
-	font-size: 1.4em;
-/*	text-indent: 15px;*/
+	font-size: 1.2em;
 	font-family: Arial, sans-serif;
 	color: #555;
+}
+
+.message {
+	display: block;
+	overflow: auto;
+	margin: 0;
+	padding: 10px 30px;
+	position: relative;
+}
+
+.messages:nth-child(odd) {
+	background: #f0f0ff;
+}
+
+.username, .sent-at {
+	display: inline-block;
+}
+
+.username {
 	font-weight: bold;
 }
 
-.username, .sent-at, .content {
-	display: block;
-	float: clear;
+.content {
+	display: inline-block;
+	float: left;
+}
+
+.user-time {
+	margin-right: 20px;
+	color: #333;
+	max-width: 30%;
+}
+
+.sent-at {
+	position: absolute;
+	right: 20px;
+	color: #999;
+	font-style: italic;
+}
+
+.content {
+	max-width: 80%;
+	min-width: 65%;
 }
