@@ -2,7 +2,7 @@
 	function LandingCtrl(Room, Message) {
 		this.Room = Room;
 		this.Message = Message;
-		console.log(Message);
+//		this.BlocChatCookies = BlocChatCookies;
 	}
  
 	angular
