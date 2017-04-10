@@ -1,30 +1,26 @@
 (function() {
-	function BlocChatCookies($cookies, $uibModal) {
+	function BlocChatCookies($cookies, $uibModal, UserNameModalCtrl) {
 		var BlocChatCookies = {};
-		BlocChatCookies.openModal = function () {
-			var modalInstance = $uibModal.open({
-				animation: true,
-				templateUrl: 'usernamemodal.html',
-				controller: 'UserNameModalCtrl',
-				size: sm
-//				resolve: {
-//					items: function () {
-//						return this.items;
-//					}
-//				}
-			});
-		}
+//		BlocChatCookies.openModal = function() {
+//			$uibModal.open({
+//				animation: true,
+//				templateUrl: '/templates/usernamemodal.html',
+//				ariaLabelledBy: 'un-modal-title',
+//				ariaDescribedBy: 'un-modal-body',
+//				size: 'sm'
+//			});
+//		};
 		BlocChatCookies.currentUser = $cookies.get('blocChatCurrentUser');		
 		if (!BlocChatCookies.currentUser || BlocChatCookies.currentUser === '') {
-			BlocChatCookies.openModal();
+//			BlocChatCookies.openModal();
 		}
 		return BlocChatCookies;
 	}
 	
 	angular
 		.module('blocChat')
-		.run([BlocChatCookies]);	
-	})();
+		.run(['$cookies', '$uibModal', BlocChatCookies]);	
+})();
 
 
 /*		

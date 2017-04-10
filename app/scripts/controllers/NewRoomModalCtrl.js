@@ -1,8 +1,6 @@
 (function() {
 	function NewRoomModalCtrl(Room) {
-
 		this.modalValue = null;
-
 		this.close = function () {
 			this.modalInstance.dismiss();
 		};

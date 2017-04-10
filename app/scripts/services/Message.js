@@ -20,6 +20,7 @@
 			});
 			return Message.messageArr;
 		}
+		
 		return Message;
 	}
 	angular

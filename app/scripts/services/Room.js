@@ -10,7 +10,7 @@
 			console.log("Added room " + roomName);
 		}
 		
-		console.log(Room.rooms);
+//		console.log(Room.rooms);
 
 		return Room;
 	}
