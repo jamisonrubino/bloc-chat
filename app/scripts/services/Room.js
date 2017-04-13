@@ -1,5 +1,5 @@
 (function() {
-	function Room($firebaseArray) {
+	function Room($firebaseArray, $uibModal) {
 		var Room = {};
 		var ref = firebase.database().ref().child("rooms");
 		Room.rooms = $firebaseArray(ref);
@@ -10,11 +10,19 @@
 			console.log("Added room " + roomName);
 		}
 		
-//		console.log(Room.rooms);
-
+		Room.openModal = function() {
+			$uibModal.open({
+				animation: true,
+				templateUrl: '/templates/newroommodal.html',
+				controller: 'NewRoomModalCtrl',
+				size: 'sm'
+			});
+		};
+		
 		return Room;
 	}
+	
 	angular
 		.module('blocChat')
-		.factory('Room', ['$firebaseArray', Room]);
+		.factory('Room', ['$firebaseArray', '$uibModal', Room]);
 })();

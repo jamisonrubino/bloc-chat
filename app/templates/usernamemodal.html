@@ -1,24 +1,26 @@
 <section class="container" ng-controller="UserNameModalCtrl as userNameModalCtrl">
 
-  <!-- Modal -->
-  <div class="modal fade" id="userNameModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="un-modal-content">
-        <div class="un-modal-header">
-          <h4 class="un-modal-title">Enter your username</h4>
-        </div>
-        <div class="un-modal-body">
-		  <input type="text" id="username-value">
+<!--	<script type="text/ng-template" id="unmodal.html">-->
+	  <!-- Modal -->
+	  <div class="modal fade" id="usernamemodal" role="dialog">
+		<div class="modal-dialog">
+
+		  <!-- Modal content-->
+		  <div class="un-modal-content">
+			<div class="un-modal-header">
+			  <h4 class="un-modal-title">Enter your username</h4>
+			</div>
+			<div class="un-modal-body">
+			  <input type="text" id="username-value">
+			</div>
+
+			<div class="un-modal-footer">
+				<button type="button" class="btn btn-default" ng-click="userNameModalCtrl.BlocChatCookies.submit(userNameModalCtrl.BlocChatCookies.currentUser)" data-dismiss="modal">Submit</button>
+			</div>
+		  </div>
+
 		</div>
-		
-        <div class="un-modal-footer">
-			<button type="button" class="btn btn-default" ng-click="userNameModalCtrl.BlocChatCookies.submit(userNameModalCtrl.BlocChatCookies.currentUser)" data-dismiss="modal">Submit</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
+	  </div>
+<!--	</script>-->
+	
 </section>
