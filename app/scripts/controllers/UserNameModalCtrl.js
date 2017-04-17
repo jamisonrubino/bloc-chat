@@ -1,22 +1,33 @@
 (function() {
 	function UserNameModalCtrl(BlocChatCookies) {
-		
 
-		this.BlocChatCookies = BlocChatCookies;	
-		this.BlocChatCookies.close = function () {
-			this.BlocChatCookies.modalInstance.dismiss();
-		};
-		this.BlocChatCookies.submit = function(value) {
-			this.BlocChatCookies.userNameValue = $("#username-value").val();
+		this.cookies = BlocChatCookies;
 
-			if (this.BlocChatCookies.userNameValue.length > 0) {
-				$cookies.put("username", this.BlocChatCookies.userNameValue);
+		this.submit = function (value) {
+			$uibModalInstance.close();
+			if (this.cookies.userNameValue.length > 0) {
+				$cookies.put("username", this.cookies.userNameValue);
 			}
-			this.BlocChatCookies.close();
+			this.cookies.userNameValue = $("#username-value").val();
 		};
-		
-	}
-	
+
+		this.cancel = function () {
+			$uibModalInstance.dismiss('cancel');
+		};
+	};
+
+		// this.close = function () {
+		// 	this.cookies.modal.dismiss();
+		// };
+		// this.submit = function(value) {
+		// 	this.cookies.userNameValue = $("#username-value").val();
+		//
+		// 	if (this.cookies.userNameValue.length > 0) {
+		// 		$cookies.put("username", this.cookies.userNameValue);
+		// 	}
+		// 	this.cookies.close();
+		// };
+
 	angular
 	   .module('blocChat')
 	   .controller('UserNameModalCtrl', ['BlocChatCookies', UserNameModalCtrl]);
