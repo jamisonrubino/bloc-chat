@@ -9,7 +9,8 @@
 				ariaLabelledBy: 'modal-title',
 				ariaDescribedBy: 'modal-body',
 				templateUrl: '/templates/newroommodal.html',
-				controller: 'NewRoomModalCtrl'
+				controller: 'NewRoomModalCtrl',
+				controllerAs: 'newRoomModalCtrl'
 			});
 		};
 		//this.BlocChatCookies = BlocChatCookies;

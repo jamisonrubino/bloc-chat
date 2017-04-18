@@ -1,21 +1,19 @@
 (function() {
 	function NewRoomModalCtrl(Room, $uibModalInstance) {
-
 		var Room = Room;
 		var modal = this;
-
 		modal.modalValue = null;
-
-		modal.submit = function(value){
+		modal.submit = function(){
 			modal.modalValue = $("#modal-value").val();
 			console.log(modal.modalValue);
 			if (modal.modalValue.length > 0) {
 				Room.newRoom(modal.modalValue);
 			}
+			$uibModalInstance.close();
 		};
 
 		modal.close = function() {
-			modal.$uibModalInstance.dismiss();
+			$uibModalInstance.dismiss('Cancel');
 		};
 
 
