@@ -1,27 +1,25 @@
 (function() {
 	function BlocChatCookies($cookies, $uibModal) {
 		var cookies = {};
-
-		cookies.modal = function() {
+		cookies.openNewUserNameModal = function () {
 			var modalInstance = $uibModal.open({
-				// animation: true,
-				templateUrl: '/templates/usernamemodal.html',
-				controller: 'UserNameModalCtrl',
-				// ariaLabelledBy: 'un-modal-title',
-	      // ariaDescribedBy: 'un-modal-body'
-				size: 'sm'
+				size: 'sm',
+				animation: true,
+				ariaLabelledBy: 'modal-title',
+				ariaDescribedBy: 'modal-body',
+				templateUrl: '/templates/newusernamemodal.html',
+				controller: 'NewUserNameModalCtrl',
+				controllerAs: 'newUserNameModalCtrl'
 			});
 		};
-
-		cookies.put = function() {
-			$cookies.put("username", "jamison");
+		cookies.put = function(value) {
+			$cookies.put("blocChatCurrentUser", value);
 		};
 
 		cookies.checkUsername = function () {
 			cookies.currentUser = $cookies.get('blocChatCurrentUser');
-
 			if (!cookies.currentUser || cookies.currentUser === '') {
-				cookies.modal();
+				cookies.openNewUserNameModal();
 				console.log("Opening username modal");
 			}
 		};
@@ -31,6 +29,20 @@
 
 	angular
 		.module('blocChat')
-		.factory('BlocChatCookies', ['$cookies', '$uibModal', BlocChatCookies]);
-		// .run(['$cookies', '$uibModal', BlocChatCookies]);
+		.factory('BlocChatCookies', ['$cookies', '$uibModal', BlocChatCookies])
+		.run(['$cookies', '$uibModal', function($cookies, $uibModal) {
+			var currentUser = $cookies.get('blocChatCurrentUser');
+			if (!currentUser || currentUser === '') {
+				var modalInstance = $uibModal.open({
+					size: 'sm',
+					animation: true,
+					ariaLabelledBy: 'modal-title',
+					ariaDescribedBy: 'modal-body',
+					templateUrl: '/templates/newusernamemodal.html',
+					controller: 'NewUserNameModalCtrl',
+					controllerAs: 'newUserNameModalCtrl'
+				});
+				console.log("Opening username modal");
+			}
+		}]);
 })();

@@ -1,5 +1,5 @@
 (function() {
-	function LandingCtrl(Room, Message, BlocChatCookies, $uibModal) {
+	function LandingCtrl(Room, Message, $uibModal) {
 		this.Room = Room;
 		this.Message = Message;
 		this.openNewRoomModal = function () {
@@ -13,15 +13,11 @@
 				controllerAs: 'newRoomModalCtrl'
 			});
 		};
-		//this.BlocChatCookies = BlocChatCookies;
-		//this.BlocChatCookies.put();
-
-		//$cookies.put("username", "jamison");
 		console.log(Message);
 
 	}
 
 	angular
 	   .module('blocChat')
-	   .controller('LandingCtrl', ['Room', 'Message', 'BlocChatCookies', '$uibModal', LandingCtrl]);
+	   .controller('LandingCtrl', ['Room', 'Message', '$uibModal', LandingCtrl]);
  })();
