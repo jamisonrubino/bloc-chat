@@ -4,7 +4,7 @@
 		var ref = firebase.database().ref().child("messages");
 		var messages = $firebaseArray(ref);
 
-      	Message.getByRoomId = function (roomId) {
+    Message.getByRoomId = function (roomId) {
 			Message.messageArr = [];
 			ref.orderByChild('roomId').equalTo(roomId).on('value', function(snapshot) {
 				for (var i = 1; i<messages.length+1; i++) {
@@ -20,7 +20,7 @@
 			});
 			return Message.messageArr;
 		}
-		
+
 		return Message;
 	}
 	angular

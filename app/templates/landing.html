@@ -1,8 +1,7 @@
 <section id="sidebar">
 	<h1>Bloc Chat</h1>
-  	<div id="add-room"><a href="" ng-click="landing.Room.openModal()">New room</a></div>
-	<ng-include src="'/templates/newroommodal.html'"></ng-include>
-	<!-- <ng-include src="'/templates/usernamemodal.html'"></ng-include> -->
+  <div id="add-room"><a href="" ng-click="landing.openNewRoomModal()">New room</a></div>
+	<!-- <ng-include src="'/templates/newroommodal.html'"></ng-include>  -->
 	<span class="clear"></span>
 	<div id="rooms-wrap">
 		<div ng-repeat="room in landing.Room.rooms" class="rooms">
@@ -14,6 +13,7 @@
 </section>
 <section id="room">
 	<h2 style="margin: 0; font-size: 1.4em; margin: 0 30px 15px;">{{ landing.selectedRoom }}</h2>
+
 	<div id="messages-wrap">
 		<div ng-repeat="message in landing.Message.messageArr" class="messages">
 			<div class="message">
