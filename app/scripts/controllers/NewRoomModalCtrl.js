@@ -1,30 +1,27 @@
 (function() {
-	function NewRoomModalCtrl(Room) {
+	function NewRoomModalCtrl(Room, $uibModalInstance) {
 
-		// MODAL CODE
-		this.modalValue = null;
-		this.openModal = function () {
-			NewRoom.modalInstance = $uibModal.open({
-				size: sm,
-				animation: true,
-				ariaLabelledBy: 'modal-title',
-				ariaDescribedBy: 'modal-body',
-				templateUrl: 'newroommodal.html'
-			});
+		var Room = Room;
+		var modal = this;
+
+		modal.modalValue = null;
+
+		modal.submit = function(value){
+			modal.modalValue = $("#modal-value").val();
+			console.log(modal.modalValue);
+			if (modal.modalValue.length > 0) {
+				Room.newRoom(modal.modalValue);
+			}
 		};
-		this.close = function () {
-			this.modalInstance.dismiss();
+
+		modal.close = function() {
+			modal.$uibModalInstance.dismiss();
 		};
-		this.submit = function(value){
-			this.modalValue = $("#modal-value").val();
-			console.log(this.modalValue);
-			if (this.modalValue.length > 0) {
-				Room.newRoom(this.modalValue);
-			}		
-		};
+
+
 	}
-	
+
 	angular
 	   .module('blocChat')
-	   .controller('NewRoomModalCtrl', ['Room', NewRoomModalCtrl]);
+	   .controller('NewRoomModalCtrl', ['Room', '$uibModalInstance', NewRoomModalCtrl]);
 })();
