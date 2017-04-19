@@ -1,3 +1,4 @@
+<main>
 <section id="sidebar">
 	<h1>Bloc Chat</h1>
   <div id="add-room"><a href="" ng-click="landing.openNewRoomModal()">New room</a></div>
@@ -30,8 +31,11 @@
 		</div>
 
 	</div>
-
-	<div id="messageInput">
-		<input id="message-text" placeholder="New Message"><a href="" id="send" ng-click="landing.Message.send()">Send</a>
+</section>
+</main>
+<section id="message-input">
+	<div id="input-wrap">
+		<input id="message-text" placeholder="New Message">
 	</div>
+	<a href="" id="send" ng-click="landing.Message.send()">Send</a>
 </section>
