@@ -20,7 +20,6 @@
 			cookies.currentUser = $cookies.get('blocChatCurrentUser');
 			if (!cookies.currentUser || cookies.currentUser === '') {
 				cookies.openNewUserNameModal();
-				console.log("Opening username modal");
 			}
 		};
 

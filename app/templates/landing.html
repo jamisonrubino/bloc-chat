@@ -3,6 +3,8 @@
   <div id="add-room"><a href="" ng-click="landing.openNewRoomModal()">New room</a></div>
 	<!-- <ng-include src="'/templates/newroommodal.html'"></ng-include>  -->
 	<span class="clear"></span>
+
+
 	<div id="rooms-wrap">
 		<div ng-repeat="room in landing.Room.rooms" class="rooms">
 			<a href="" ng-click="landing.Message.getByRoomId(room.value); landing.selectedRoom = room.value;">
@@ -11,6 +13,8 @@
 		</div>
 	</div>
 </section>
+
+
 <section id="room">
 	<h2 style="margin: 0; font-size: 1.4em; margin: 0 30px 15px;">{{ landing.selectedRoom }}</h2>
 
@@ -25,5 +29,9 @@
 			</div>
 		</div>
 
+	</div>
+
+	<div id="messageInput">
+		<input id="message-text" placeholder="New Message"><a href="" id="send" ng-click="landing.Message.send()">Send</a>
 	</div>
 </section>
